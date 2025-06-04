@@ -1,0 +1,19 @@
+{
+  "name": "02-bases",
+  "version": "1.0.0",
+  "description": "Esta es mi prier aplicación real de Node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YefersonDuque/CursoNode.git"
+  },
+  "author": "Yeferson Duque",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YefersonDuque/CursoNode/issues"
+  },
+  "homepage": "https://github.com/YefersonDuque/CursoNode#readme"
+}
