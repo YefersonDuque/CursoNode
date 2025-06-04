@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.js",
-    "dev": "echo 'Hola mundo desde dev'"
+    "dev": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/YefersonDuque/CursoNode/issues"
   },
-  "homepage": "https://github.com/YefersonDuque/CursoNode#readme"
+  "homepage": "https://github.com/YefersonDuque/CursoNode#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
