@@ -1,14 +1,8 @@
-// const {emailTemplate} = require('./js-foundation/01-template')
+const getPokemonById = require('./js-foundation/06-promises')
 
-// require('./js-foundation/02-destructuring')
 
-const { getUserById } = require('./js-foundation/03-callbacks')
+getPokemonById(4)
+.then((pokemon)=>console.log({pokemon}))
+.catch((err)=> console.log({err}))
+.finally(()=>console.log('Final'))
 
-const id = 2;
-
-getUserById(id, function (error, user) {
-    if (error) {
-        throw new Error( error);
-    }
-    console.log(user);
-});

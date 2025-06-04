@@ -20,5 +20,10 @@
   "homepage": "https://github.com/YefersonDuque/CursoNode#readme",
   "devDependencies": {
     "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "get-age": "^1.0.1",
+    "uuid": "^11.1.0"
   }
 }
