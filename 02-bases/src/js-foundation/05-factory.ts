@@ -1,11 +1,10 @@
 
-
-interface buildMakePersonOptions{
+interface buildMakePersonOptions {
     getUUID: () => string;
-    getAge:(birthdate:string) => number;
+    getAge: (birthdate: string) => number;
 }
 
-interface PersonOptions{
+interface PersonOptions {
     name: string;
     birthdate: string;
 }

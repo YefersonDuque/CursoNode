@@ -1,11 +1,15 @@
 import { http } from '../plugins';
 
-export const getPokemonByid = async (id: number|string):Promise<string> => {
+export const getPokemonByid = async (id: number | string): Promise<string> => {
 
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    try {
 
-    const pokemon = await http.get(url);
+        const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+        const pokemon = await http.get(url);
+        return pokemon.name;
+    }
+    catch (error) {
 
-    // throw new Error('Pokemon no existe');
-    return pokemon.name;
+        throw `Pokemon not found with id ${id}`;
+    }
 }
