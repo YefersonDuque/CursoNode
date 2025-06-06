@@ -1,6 +1,6 @@
 {
 
-  "include": ["src/**/*", "tests/js-foundation/02-destructuring copy.ts", "tests/js-foundation/03-callbacks copy.ts", "tests/js-foundation/05-factory copy.ts", "tests/js-foundation/06-promises copy.ts"],
+  "include": ["src/**/*"],
 
   "exclude": ["node_modules", "**/*.spec.ts","**/*.test.ts"],
 

@@ -27,6 +27,6 @@ describe('plugins/get-age-plugin.ts', () => {
         const age = getAge(birthdate);
 
         expect(age).toBe(0);
-        console.log(spy);
+        // console.log(spy);
     })
 })

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1749161150781" clover="3.2.0">
-  <project timestamp="1749161150781" name="All files">
-    <metrics statements="86" coveredstatements="86" conditionals="9" coveredconditionals="9" methods="4" coveredmethods="4" elements="99" coveredelements="99" complexity="0" loc="86" ncloc="86" packages="2" files="6" classes="6"/>
+<coverage generated="1749226521838" clover="3.2.0">
+  <project timestamp="1749226521838" name="All files">
+    <metrics statements="144" coveredstatements="137" conditionals="16" coveredconditionals="16" methods="16" coveredmethods="9" elements="176" coveredelements="162" complexity="0" loc="144" ncloc="144" packages="2" files="10" classes="10"/>
     <package name="js-foundation">
       <metrics statements="78" coveredstatements="78" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
       <file name="01-template.ts" path="C:\Yeferson\node\02-bases\src\js-foundation\01-template.ts">
@@ -99,7 +99,7 @@
       </file>
     </package>
     <package name="plugins">
-      <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="66" coveredstatements="59" conditionals="8" coveredconditionals="8" methods="13" coveredmethods="6"/>
       <file name="get-age.plugin.ts" path="C:\Yeferson\node\02-bases\src\plugins\get-age.plugin.ts">
         <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -110,6 +110,76 @@
         <line num="6" count="3" type="stmt"/>
         <line num="7" count="3" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
+      </file>
+      <file name="get-id.plugin.ts" path="C:\Yeferson\node\02-bases\src\plugins\get-id.plugin.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
+      </file>
+      <file name="http-client.plugin.ts" path="C:\Yeferson\node\02-bases\src\plugins\http-client.plugin.ts">
+        <metrics statements="17" coveredstatements="11" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="index.ts" path="C:\Yeferson\node\02-bases\src\plugins\index.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="4" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="logger.plugin.ts" path="C:\Yeferson\node\02-bases\src\plugins\logger.plugin.ts">
+        <metrics statements="33" coveredstatements="32" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
       </file>
     </package>
   </project>
