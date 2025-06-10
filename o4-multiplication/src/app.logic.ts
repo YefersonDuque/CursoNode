@@ -1,26 +1,27 @@
 import fs from "fs";
+import { yarg } from './config/plugins/args.plugin'
+
+const { b: base, l: limit, s: show } = yarg;
 
 let outputMessage = '';
-const base: number = 5;
 
-const headerMessage = `
+export const headerMessage = `
 ===============================
           TABLA DEL ${base} 
 ===============================\n
-`;
-
-for (let num1 = 0; num1 <= 10; num1++) {
-    outputMessage += `${base} x ${num1} = ${base * num1}\n`;
-    
-}
+`
 
 outputMessage = headerMessage + outputMessage;
-console.log(outputMessage);
+
+if (show) {
+    console.log(outputMessage);
+}
 
 //Crea la parpeta si no existe
 const outputPath = 'outputs';
-fs.mkdirSync(outputPath,{recursive:true})
+fs.mkdirSync(outputPath, { recursive: true })
 
 // Guardar la tabla en un archivo
 
 fs.writeFileSync(`${outputPath}/tabla-${base}.txt`, outputMessage);
+console.log('File created!')
