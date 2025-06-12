@@ -34,12 +34,12 @@ export class Server {
         //     'duqueyeferson@gmail.com','csilva@clinicasomer.com'
         // ])-----------------------------------------------------------
 
-         const emailService = new EmailService(
-            fileSystemLogRepository
-         );
-        emailService.sendEmailWithFileSystemLogs([
-            'duqueyeferson@gmail.com'
-        ])
+        //  const emailService = new EmailService(
+        //     fileSystemLogRepository
+        //  );
+        // emailService.sendEmailWithFileSystemLogs([
+        //     'duqueyeferson@gmail.com'
+        // ])
         // -----------------------------------------------------------
 
         // CronService.createJob(
