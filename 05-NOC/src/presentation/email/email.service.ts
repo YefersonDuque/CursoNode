@@ -28,7 +28,7 @@ export class EmailService {
     });
 
     constructor(
-        private readonly logRepository: LogRepository,
+        // private readonly logRepository: LogRepository,
     ){}
 
     async sendEmail(options: SendMailOption): Promise<boolean> {
@@ -50,7 +50,7 @@ export class EmailService {
                 message: 'Email sent',
                 origin: 'email.service.ts'
             })
-            this.logRepository.saveLog(log);
+            // this.logRepository.saveLog(log);
 
             return true;
         } catch (error) {
@@ -59,7 +59,7 @@ export class EmailService {
                 message: 'Email not sent',
                 origin: 'email.service.ts'
             })
-            this.logRepository.saveLog(log);
+            // this.logRepository.saveLog(log);
             return false;
         }
     }
