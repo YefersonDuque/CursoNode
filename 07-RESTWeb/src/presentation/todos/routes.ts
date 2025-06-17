@@ -1,18 +1,18 @@
-import { Router } from "express";
-import { TodosController } from "./controller";
+import { Router } from 'express';
+import { TodosController } from './controller';
 
 export class TodosRoutes {
+  static get routes(): Router {
+    const router = Router();
+    const todoController = new TodosController();
 
-    static get routes(): Router {
+    // Rutas CRUD
+    router.get('/', (req, res) => todoController.getTodos(req, res));
+    router.get('/:id', (req, res) => todoController.getTodosById(req, res));
+    router.post('/', (req, res) => todoController.createTodo(req, res));
+    router.put('/:id', (req, res) => todoController.updateTodo(req, res));
+    router.delete('/:id', (req, res) => todoController.deleteTodo(req, res));
 
-        const router = Router();
-
-        const todoController = new TodosController();
-
-        // router.get('/', todoController.getTodos);
-        // router.get('/:id', todoController.getTodosById);
-        router.post('/', todoController.createTodo);
-
-        return router;
-    }
+    return router;
+  }
 }
