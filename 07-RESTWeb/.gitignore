@@ -4,7 +4,7 @@ node_modules/
 
 keys/
 
-postgres/
+/postgres
 /src/generated/prisma
 
 /src/generated/prisma
