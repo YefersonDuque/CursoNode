@@ -1,83 +1,74 @@
 import { Request, Response } from "express";
-
-const todos = [
-    { id: 1, text: 'Buy milk', completedAt: new Date() },
-    { id: 2, text: 'Buy bread', completedAt: null },
-    { id: 3, text: 'Buy butter', completedAt: new Date() }
-];
+import { prisma } from "../../data/postgres";
 
 export class TodosController {
 
     constructor() { }
 
-    public getTodos = (req: Request, res: Response): void => {
+    public getTodos = async (req: Request, res: Response) => {
+        const todos = await prisma.todo.findMany();
         res.json(todos);
     };
 
-    public getTodosById = (req: Request, res: Response): void => {
+    public getTodosById = async (req: Request, res: Response) => {
         const id = +req.params.id;
 
         if (isNaN(id)) {
-            res.status(400).json({ error: `Id argument is not a number` }); return;
+            res.status(400).json({ error: `Id argument is not a number` });
         }
-
-        const todo = todos.find(todo => todo.id === id);
-
-        if (todo) {
-            res.json(todo);
-        } else {
-            res.status(404).json({ error: `Todo with id ${id} not found` });
-        }
+        const todo = await prisma.todo.findFirst({
+            where: { id }
+        });
+        (todo) ? res.json(todo) : res.status(404).json({ error: `Todo with id ${id} not found` });
     };
 
-    public createTodo = (req: Request, res: Response): void => {
+    public createTodo = async (req: Request, res: Response) => {
         const { text } = req.body;
 
-        if (!text) {
-            res.status(400).json({ error: 'Text property is required' }); return;
-        }
+        if (!text) res.status(400).json({ error: 'Text property is required' });
 
-        const newTodo = {
-            id: todos.length + 1,
-            text,
-            completedAt: null
-        };
-
-        todos.push(newTodo);
-        res.json(newTodo);
+        const todo = await prisma.todo.create({
+            data: { text }
+        })
+        res.json(todo);
     };
 
-    public updateTodo = (req: Request, res: Response): void => {
+    public updateTodo = async (req: Request, res: Response) => {
         const id = +req.params.id;
 
-        if (isNaN(id)) {
-            res.status(400).json({ error: `Id argument is not a number` }); return;
-        }
+        if (isNaN(id)) res.status(400).json({ error: `Id argument is not a number` });
 
-        const todo = todos.find(todo => todo.id === id);
+        const todo = await prisma.todo.findFirst({
+            where: { id }
+        });
 
-        if (!todo) {
-            res.status(404).json({ error: `Todo with id ${id} not found` }); return;
-        }
+        if (!todo) res.status(404).json({ error: `Todo with id ${id} not found` });
+
 
         const { text, completedAt } = req.body;
 
-        (completedAt === 'null') ? todo.completedAt = null : todo.completedAt = new Date(completedAt || todo.completedAt)
+        const updateTodo = await prisma.todo.update({
+            where: { id },
+            data: {
+                text,
+                completedAt: (completedAt) ? new Date(completedAt) : null
+            }
+        })
 
-        todo.text = text || todo.text;
-        res.json(todo);
+        res.json(updateTodo);
     };
 
-    public deleteTodo = (req: Request, res: Response): void => {
+    public deleteTodo = async (req: Request, res: Response) => {
         const id = +req.params.id;
-        const todo = todos.find(todo => todo.id === id);
+        const todo = await prisma.todo.findFirst({
+            where: { id }
+        });
 
-        if (!todo) {
-            res.status(404).json({ error: `Todo with id ${id} not found` });
-            return;
-        }
-        todos.splice(todos.indexOf(todo), 1); //Elimina el todo
+        if (!todo) res.status(404).json({ error: `Todo with id ${id} not found` });
+        const deleted = await prisma.todo.delete({
+            where: { id }
+        });
 
-        res.json(todo);
+        (deleted) ? res.json(deleted) : res.status(400).json({ error: `Todo with id ${id} not found` })
     }
 }
