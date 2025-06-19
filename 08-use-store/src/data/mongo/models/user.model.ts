@@ -1,14 +1,13 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-
     name: {
         type: String,
-        require: [true, 'Name is required']
+        required: [true, 'Name is required']
     },
     email: {
         type: String,
-        require: [true, 'Email is required'],
+        required: [true, 'Email is required'],
         unique: true
     },
     emailValidated: {
@@ -17,7 +16,7 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        require: [true, 'Password is required']
+        required: [true, 'Password is required']
     },
     img: {
         type: String,
@@ -27,8 +26,6 @@ const userSchema = new mongoose.Schema({
         default: ['USER_ROLE'],
         enum: ['ADMIN_ROLE', 'USER_ROLE']
     },
-
-
 });
 
-export const userModel = mongoose.model('User', userSchema);
+export const UserModel = mongoose.model('User', userSchema);

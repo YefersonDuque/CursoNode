@@ -18,7 +18,7 @@ export class UserEntity {
 
         if (!id && !_id) {
             throw CustomError.badReques('Missing id');
-        }
+        }                                
 
         if (!name) throw CustomError.badReques('Missing name');
 
